@@ -18,9 +18,11 @@ unset($_SESSION["role"]);
 
 <body>
   <br><br><br>
-  <div class="d-block w-100 text-center" style="font-weight:20px;font-weight:bold">ระบบงาน อ.ต.ก. เวปไซต์</div>
+  <div class="d-block w-100 text-center" style="font-size:30px;font-weight:bold">ระบบงาน อ.ต.ก. เวปไซต์</div>
   <br><br><br>
   <div class="d-block w-100 text-center">คุณได้ออกจากระบบงาน อ.ต.ก. เวปไซต์แล้ว</div>
+  <br><br><br>
+  <div class="d-block w-100 text-center"><button type="button" class="btn btn-add" onclick="window.location.href='login.php'">ไปหน้า Login</div>
   <div class="d-block w-100 text-center" id="snackbar"></div>
   
 </body>

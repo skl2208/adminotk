@@ -34,6 +34,9 @@ if (isset($_POST["status"]) && ($_POST["status"] != "")) {
     $status = "";
 }
 
+//=== เข้ารหัส ===//
+$encryptPassword = password_hash($enpassword,PASSWORD_BCRYPT);
+
 $list_result["inputdata"] = $id . "," . $user . "," . $role . "," . $enpassword . "," . $status;
 
 if ($id != "") {
@@ -42,14 +45,14 @@ if ($id != "") {
 
     $list_result["sql"] = $sql;
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param('ssssi', $user, $enpassword, $role, $status, $id);
+    $stmt->bind_param('ssssi', $user, $encryptPassword, $role, $status, $id);
 } else {
     //=== Add ===//
     $sql = "INSERT INTO account (user,password,role,  status) VALUES (?,?,?,?)";
     $list_result["id"] = $id;
     $list_result["sql"] = $sql;
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param('ssss', $user, $enpassword, $role, $status);
+    $stmt->bind_param('ssss', $user, $encryptPassword, $role, $status);
 }
 $list_result["progress"] = "DONE";
 try {

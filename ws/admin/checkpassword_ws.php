@@ -39,14 +39,23 @@ try {
         $info["role"] = $row["role"];
         $info["password"] = $row["password"];
 
-        if ($info["password"] != $password) {
-            $list_result["status"] = "FAIL";
-            $list_result["message"] = "password mismatch!";
-        } else {
+        if(password_verify($password,$row["password"])){
             session_start();
             $_SESSION["username"] = $info["user"];
-            $_SESSION["role"] = $info["role"];            
+            $_SESSION["role"] = $info["role"];  
+        } else {
+            $list_result["status"] = "FAIL";
+            $list_result["message"] = "password mismatch!";
         }
+
+        // if ($info["password"] != $password) {
+        //     $list_result["status"] = "FAIL";
+        //     $list_result["message"] = "password mismatch!";
+        // } else {
+        //     session_start();
+        //     $_SESSION["username"] = $info["user"];
+        //     $_SESSION["role"] = $info["role"];            
+        // }
     } else {
         $list_result["status"] = "FAIL";
         $list_result["message"] = "Not found any row";
