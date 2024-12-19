@@ -1,0 +1,414 @@
+@font-face {
+  font-family: Prompt;
+  src: url("../font/Prompt-Regular.ttf");
+}
+
+@font-face {
+  font-family: Prompt-thin;
+  src: url("../font/Prompt-Thin.ttf");
+}
+
+@font-face {
+  font-family: Prompt-light;
+  src: url("../font/Prompt-Light.ttf");
+}
+
+@font-face {
+  font-family: Noland;
+  src: url("../font/Noland-Bold.otf");
+}
+
+@font-face {
+  font-family: SaochingchaBold;
+  src: url("../font/SaoChingcha-Bold.otf");
+}
+
+html {
+  scroll-behavior: smooth;
+  /* background-image: url("../images/bg2.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%; */
+}
+
+a:link {
+  color: rgb(39, 72, 218);
+  /* สีของลิงก์ที่ยังไม่ถูกเยี่ยมชม */
+  text-decoration: none;
+}
+
+a:hover {
+  color: orange;
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(39, 72, 218);
+  /* สีของลิงก์ที่ถูกเยี่ยมชมแล้ว */
+  text-decoration: none;
+}
+
+a:active {
+  color: rgb(214, 233, 42);
+  /* สีของลิงก์ขณะถูกคลิก */
+  text-decoration: none;
+}
+
+body {
+  font-family: Prompt;
+  font-size: 15px;
+  background-color: rgb(242, 242, 242) !important;
+}
+
+textarea,
+input {
+
+  border-radius: 5px;
+}
+
+textarea:focus,
+input:focus {
+  outline: 5px solid lightgreen;
+
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.btn {
+  font-family: Prompt;
+  font-size: 14px;
+  color: white;
+}
+
+.btn-small {
+  font-family: Prompt;
+  font-size: 12px;
+  color: white;
+  border-radius: 5px;
+  border: none;
+}
+
+.btn-small:hover {
+  filter: brightness(1.5);
+}
+
+.btn:hover {
+  filter: brightness(1.5);
+  border: 1px solid black;
+}
+
+.btn-add {
+  background-color: darkgreen;
+}
+
+.btn-save {
+  background-color: blue;
+}
+
+.btn-cancel {
+  background-color: grey;
+}
+
+.font-thin {
+  font-family: Prompt-thin;
+}
+
+.font-light {
+  font-family: Prompt-light;
+}
+
+.greeting {
+  top: 100px;
+}
+
+.icon-picture {
+  height: 25px;
+  width: auto;
+  margin-right: 5px;
+}
+
+.welcome-th {
+  font-family: Prompt;
+  font-size: 40px;
+  color: darkgreen;
+  font-weight: bold;
+}
+
+.welcome-en {
+  font-family: Prompt;
+  font-size: 40px;
+  color: darkgreen;
+  font-weight: bold;
+}
+
+.title-head {
+  display: block;
+  font-weight: bold;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.top-part {
+  background-image: url("../images/top_part.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.spec1 {
+  position: absolute;
+  top: 60;
+  left: 10%;
+  right: 10%;
+  display: block;
+  padding: 120px 0;
+}
+
+.show-news {
+  height: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  /* overflow-x:visible;
+  overflow-y: hidden; */
+  /* border: 1px solid red; */
+}
+
+.head-title {
+  font-family: Prompt;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+div.scroll-container {
+  overflow: auto;
+  white-space: nowrap;
+  padding: 0;
+}
+
+div.scroll-container div {
+  display: inline-block;
+  position: relative;
+  overflow-wrap: break-word;
+}
+
+div.scroll-container div div {
+  display: block;
+  position: absolute;
+  top: 260px;
+  /* bottom: 5px; */
+  width: 100%;
+  /* left: 10px;
+  right: 10px; */
+
+  overflow-wrap: break-word;
+  white-space: nowrap;
+  padding: 10px;
+  font-family: Prompt;
+  font-size: 15px;
+  background-color: white;
+  height: 60px;
+  /* border: 1px solid blue; */
+  /* border-radius: 30px; */
+
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+figcaption,
+.caption {
+  padding: 10px;
+  height: 75px;
+  font-family: Prompt;
+  font-size: 14px;
+  overflow-y: hidden;
+  text-align: left;
+  background-color: #ffffff5c;
+}
+
+.content {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.border-red {
+  border: 1px solid red;
+}
+
+.border-blue {
+  border: 1px solid blue;
+}
+
+.border-grey {
+  border: 2px solid rgb(209, 208, 208);
+  border-radius: 10px;
+}
+.head-background {
+  background-color: lightgreen;
+}
+div.scroll-container div img {
+  padding-top: 5px;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 5px;
+
+  max-height: 320px;
+  border-radius: 30px;
+  /* border-top-left-radius: 30px;
+  border-top-right-radius: 30px; */
+}
+
+.hidden {
+  display: none;
+}
+
+.img-news {
+  margin-right: 30px;
+
+  height: 200px;
+  border-radius: 30px;
+  box-shadow: 2px 2px 5px grey;
+}
+
+
+.news {
+  width: 450px;
+  height: 100%;
+}
+
+.navbar {
+  background-color: lightgreen !important;
+  padding-left: 20px;
+}
+
+#snackbar {
+  visibility: hidden;
+  /* Hidden by default. Visible on click */
+  min-width: 250px;
+  /* Set a default minimum width */
+  margin-left: -125px;
+  /* Divide value of min-width by 2 */
+  background-color: #107204;
+  /* Black background color */
+  color: #fff;
+  /* White text color */
+  text-align: center;
+  /* Centered text */
+  border-radius: 2px;
+  /* Rounded borders */
+  padding: 16px;
+  /* Padding */
+  position: fixed;
+  /* Sit on top of the screen */
+  z-index: 1;
+  /* Add a z-index if needed */
+  left: 50%;
+  /* Center the snackbar */
+  bottom: 30px;
+  /* 30px from the bottom */
+}
+
+#snackbar.show {
+  visibility: visible;
+  /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+
+@media screen and (min-width: 100px) and (max-width: 600px) {
+  .greeting {
+    top: 50px;
+  }
+
+  .head-title {
+    font-size: 15px;
+
+  }
+
+  .img-news {
+    height: 70px;
+    margin-right: 10px;
+    border-radius: 10px;
+    display: inline-block;
+  }
+
+  .spec1 {
+    left: 10px;
+    right: 10px;
+  }
+
+  .show-news {
+    height: 100%;
+  }
+
+  .welcome-en {
+    font-size: 20px;
+  }
+
+  .welcome-th {
+    font-size: 20px;
+  }
+
+  .caption {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 601px) {}
