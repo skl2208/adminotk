@@ -5,7 +5,6 @@ $(function () {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
     console.log(id);
-
     //================== ดึงข้อมูลจากฐานข้อมูล =================//
     if (id != "") {
         var url = "ws/news/shownews_ws.php?id=" + id;
@@ -22,12 +21,12 @@ $(function () {
                 console.log(data.data[0].imageurl);
                 console.log(data.data[0].imagename);
                 //===== ทำการ bind ค่าลงในหน้าเวป =====//
-
-
                 $("#id").val(data.data[0].id);
                 $("#headnews").val(data.data[0].headnews);
                 $("#headimageurl").val(data.data[0].headimageurl);
-                $("#content").val(data.data[0].content);
+                // $("#content").val(data.data[0].content);
+                CKEDITOR.instances['content'].setData(data.data[0].content);
+
                 $("#status").val(data.data[0].status);
 
                 if (data.data[0].status == 'T') {

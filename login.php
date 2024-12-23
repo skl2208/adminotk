@@ -13,7 +13,7 @@
 
 <body>
 <br><br><br>
-<div class="d-block w-100 text-center" style="font-size:30px;font-weight:bold">ระบบงาน อ.ต.ก. เวปไซต์</div>
+<div class="d-block w-100 text-center" style="font-weight:20px;font-weight:bold">ระบบงาน อ.ต.ก. เวปไซต์</div>
 <br><br><br>
 <form method="POST" action="#">
   <div class="shadow-sm" style="width:600px;background-color:white;padding:20px;border-radius:5px;margin-left:auto;margin-right:auto">
@@ -58,7 +58,7 @@
             // After 3 seconds, remove the show class from DIV
             setTimeout(function() {
                 x.className = x.className.replace("show", "");
-                window.location.href = "index.php";
+                window.location.href = "mng_greeting.php";
             }, 2000);
         } else {
           alert("รหัสผ่านไม่ถูกต้อง");

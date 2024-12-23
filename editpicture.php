@@ -10,7 +10,6 @@
     <script type="text/javascript" src="jquery-3.6.3/jquery-3.6.3.min.js"></script>
     <script type="text/javascript" src="bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript" src="js/editpicture.js"></script>
 </head>
 
 <body>

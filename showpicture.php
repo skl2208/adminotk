@@ -49,7 +49,7 @@
                         html += "</div>";
                     });
 
-                    $("#bindData").html(html);
+                    $("#bindData").append(html);
                 },
             });
         });

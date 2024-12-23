@@ -112,9 +112,11 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closemodal">Close</button>
                 </div>
+                <div class="d-block w-100 text-center" id="snackbar"></div>
             </div>
         </div>
     </div>
+    
     <script>
         function callpicture() {
             console.log("ready");
@@ -134,12 +136,25 @@
 
                     var html = "";
                     data.data.forEach(element => {
-                        html += "<div class=\"col-2 border-grey p-1 m-1\"><div class=\"mt-1 mb-1\"><a href=\"javascript:showpicture('" + element.imageurl + "')\"><img src=\"" + element.imageurl + "\" style=\"width:100%\" ></a> </div></div>"
+                        html += "<div class=\"col-2 border-grey p-1 m-1\">"
+                        html += "<div class=\"mt-1 mb-1\"><a href=\"javascript:showpicture('" + element.imageurl + "')\"><img src=\"" + element.imageurl + "\" style=\"width:100%\" ></a> </div>"
+                        html += "<div class=\"mt-1 mb-1\"><button class=\"btn btn-add\" type=\"button\" onclick=\"javascript:copylink('" + element.imageurl + "')\">COPY LINK</button></div>";
+                        html += "</div>";
                     });
 
                     $("#bindData").html(html);
                 },
             });
+        }
+
+        function copylink(link) {
+            navigator.clipboard.writeText(link);
+            var x = document.getElementById("snackbar");
+            x.innerHTML = 'Copied...!';
+            x.className = "show";
+            setTimeout(function() {
+                x.className = x.className.replace("show", "");
+            }, 2000);
         }
 
         function showpicture(imageurl) {
