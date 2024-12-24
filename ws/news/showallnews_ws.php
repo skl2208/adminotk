@@ -11,9 +11,15 @@ if (isset($_GET["status"]) && $_GET["status"] != "") {
     $condition = "1=1";
 }
 
+if(isset($_GET["limit"]) && $_GET["limit"] != ""){
+    $limit = " LIMIT 3";
+} else {
+    $limit = "";
+}
+
 $list_greeting = [];
 
-$sql = "SELECT id,headnews,headimageurl,headimage,createdate,updatedate,status from news where $condition order by updatedate DESC";
+$sql = "SELECT id,headnews,headimageurl,headimage,createdate,updatedate,status from news where $condition order by updatedate DESC ".$limit;
 
 
 try {

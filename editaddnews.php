@@ -169,17 +169,19 @@
             const url = "ws/news/updatenews_ws.php";
             console.log("going to " + url);
 
-            const id = document.getElementById("id").value;
-            const headnews = document.getElementById("headnews").value;
-            const headimageurl = document.getElementById("headimageurl").value;
-            // const content = document.getElementById("content").value;
-            const content = CKEDITOR.instances['content'].getData();
-            const status = document.getElementById("status").value;
-            const inputData = "{\"id\": \"" + id + "\",\"headnews\": \"" + headnews.replaceAll(/[\r\n]+/gm, "").replaceAll('"', '\\u201c').replaceAll("'", '\\u201d') + "\",\"headimageurl\": \"" + headimageurl + "\",\"content\": \"" + content.replaceAll(/[\r\n]+/gm, "").replaceAll('"', '\\u201c').replaceAll("'", '\\u201d') + "\",\"status\": \"" + status + "\"}";
-            console.log(inputData);
+            var id = document.getElementById("id").value;
+            var headnews = document.getElementById("headnews").value;
+            var headimageurl = document.getElementById("headimageurl").value;
+            var content = CKEDITOR.instances['content'].getData();
+            // console.log(content);
+            content = content.replace(/['"]/g, "\\$&").replace(/[\r\n]+/gm, "");
+            // console.log(content);
+            var status = document.getElementById("status").value;
+            const inputData = "{\"id\": \"" + id + "\",\"headnews\": \"" + headnews.replaceAll(/[\r\n]+/gm, "").replaceAll('"', '\\u201c').replaceAll("'", '\\u201d') + "\",\"headimageurl\": \"" + headimageurl + "\",\"content\": \"" + content + "\",\"status\": \"" + status + "\"}";
+            // console.log(inputData);
             const jsoninputData = JSON.parse(inputData);
-            console.log("before enter");
-            console.log(jsoninputData);
+            // console.log("before enter");
+            // console.log(jsoninputData);
             $.ajax({
                 url: url,
                 method: "POST",

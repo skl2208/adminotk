@@ -14,7 +14,7 @@ if (isset($_GET["id"]) && $_GET["id"] != "") {
 $list_greeting = [];
 
 
-$sql = "SELECT id,headnews,headimageurl,headimage,createdate,content,status from news where $condition";
+$sql = "SELECT id,headnews,headimageurl,headimage,createdate,updatedate,content,status from news where $condition";
 
 
 try {
