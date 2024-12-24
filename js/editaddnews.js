@@ -4,11 +4,9 @@ $(function () {
     //================== ดึงข้อมูลจากฐานข้อมูล =================//
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
-    console.log(id);
     //================== ดึงข้อมูลจากฐานข้อมูล =================//
     if (id != "") {
         var url = "ws/news/shownews_ws.php?id=" + id;
-        console.log("url = " + url);
         $.ajax({
             url: url,
             method: "GET",
@@ -18,13 +16,13 @@ $(function () {
                 if (filename == "") {
                     filename = data.data[0].imagename;
                 }
-                console.log(data.data[0].imageurl);
-                console.log(data.data[0].imagename);
+
                 //===== ทำการ bind ค่าลงในหน้าเวป =====//
                 $("#id").val(data.data[0].id);
                 $("#headnews").val(data.data[0].headnews);
                 $("#headimageurl").val(data.data[0].headimageurl);
                 // $("#content").val(data.data[0].content);
+                console.log("แสดง content="+data.data[0].content);
                 CKEDITOR.instances['content'].setData(data.data[0].content);
 
                 $("#status").val(data.data[0].status);

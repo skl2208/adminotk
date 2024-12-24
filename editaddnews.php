@@ -174,6 +174,7 @@
             var headimageurl = document.getElementById("headimageurl").value;
             var content = CKEDITOR.instances['content'].getData();
             // console.log(content);
+            //======= อะไรที่ต้องกำจัดออกจากข้อมูล หรือเครื่องหมายคำพูดที่ต้องแปลงออกไป ทำตรงนี้ =====//
             content = content.replace(/['"]/g, "\\$&").replace(/[\r\n]+/gm, "");
             // console.log(content);
             var status = document.getElementById("status").value;
