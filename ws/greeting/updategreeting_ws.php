@@ -22,13 +22,27 @@ if (isset($_POST["status"]) && ($_POST["status"] != "")) {
 
 
 if (isset($_POST["id"]) && $_POST["id"] != "") {
+    //=== ทำการคำนวณหาค่าเดิมของคำทักทาย ===//
+    if ($status == "T") {
+        //=== ปิดคำทักทายเดิมทุกอันให้หมด ===//
+        $sql = "UPDATE greeting SET status='F'";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+    }
     //=== Update ===//
     $sql = "UPDATE greeting SET welcometh = ?, welcomeen = ?, updatedate=CURRENT_TIMESTAMP(), status = ? WHERE id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('sssi', $welcometh, $welcomeen, $status, $id);
 } else {
+    //=== ทำการคำนวณหาค่าเดิมของคำทักทาย ===//
+    if ($status == "T") {
+        //=== ปิดคำทักทายเดิมทุกอันให้หมด ===//
+        $sql = "UPDATE greeting SET status='F'";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+    }
     //=== Add ===//
-    $sql = "INSERT INTO greeting (welcometh,welcomeen,  status) VALUES (?,?,?)";
+    $sql = "INSERT INTO greeting (welcometh,welcomeen,status) VALUES (?,?,?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('sss', $welcometh, $welcomeen, $status);
 }
